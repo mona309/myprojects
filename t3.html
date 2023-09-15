@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>My Title</title>
+    </head>
+    <body>
+        
+        <p id="demo"></p>
+        <a href="">My Link</a>
+        <button id="mybutton">click me</button>
+        <div id="myele">Hover over me</div>
+        <input id="myinp" type="text">
+        
+        <script>
+        async function mymomspromise(){
+            return 'i get a book';
+        }
+        console.log(mymomspromise());
+        document.getElementById("demo").innerHTML = "Hello World";
+        const x= document.querySelectorAll("p.intro");
+        const y= document.querySelector("p.intro");
+        function changetext(id){
+            id.innerHTML="oops";
+        }
+        const button=document.getElementById('mybutton');
+        button.addEventListener('click',function(){
+            alert('The selected items have been added');
+        })
+        const element=document.getElementById("myele");
+        element.addEventListener('mouseover',function(){
+            element.style.backgroundColor='lightblue';
+        })
+        const input=document.getElementById("myinp");
+        input.addEventListener('keydown',function(event){
+            console.log('key pressed:',event.key);
+        })
+        const apiurl='https://jsonplaceholder.typicode.com/todos';
+        fetch(apiurl)
+        .then((response)=>{
+            if (response.ok){throw new Error('http error!status: ${response.status}');}
+            return respinse.json();
+        })
+        .then((data)=>{console.log('data fetched:',data)})
+        .catch((error)=>{console.error('fetch error:',error)})
+        </script>
+        <h1>My header</h1>-
+        <h1 onclick="changetext(this)">click here</h1>
+    </body>
+</html>
